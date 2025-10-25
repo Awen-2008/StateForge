@@ -1,3 +1,8 @@
+/*
+ * Triple Button LED Control Example
+ * 本示例是以 ESP32 开发板为平台，使用 StateForge 按键状态机库实现的三键控制三个LED灯的功能。
+ */
+
 #include "StateForge.h"
 
 // 定义按键引脚
