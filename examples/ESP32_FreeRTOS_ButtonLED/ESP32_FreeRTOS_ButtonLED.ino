@@ -55,7 +55,7 @@ const unsigned long blinkInterval = 500;                // LED闪烁间隔(500ms
 void buttonTask(void *pvParameters) {
   unsigned long lastLoopTime = 0;
   const unsigned long loopInterval = 5;                 // 按键检测每 5ms 循环一次，提高响应性
-
+  Serial.println("首次进入【按键任务】");
   for (;;) {
     if (checkDelay(loopInterval, lastLoopTime)) {
       // 获取按键事件
@@ -105,9 +105,8 @@ void buttonTask(void *pvParameters) {
 
 // LED控制任务
 void ledTask(void *pvParameters) {
-  //Serial.println("进入 LED 任务：");
+  Serial.println("首次进入【LED 任务】");
   for (;;) {
-    //Serial.println("LED 任务进行中...");
     // 从队列获取事件，但不阻塞
     ButtonEvent event;
     if(xQueueReceive(eventQueue, (void *)&event, 0)) {
