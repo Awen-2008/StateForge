@@ -159,13 +159,13 @@ void ledTask(void *pvParameters) {
         lastBlinkTime = millis();
 
         // 检查闪烁是否完成（5次闪烁共10次状态变化）
-        blinkCount++;
         if (blinkCount >= BLINKCOUNT * 2) {
           isBlinking = false;
           blinkCount = 0;
           digitalWrite(LED_PIN, LOW);  // 确保LED最终关闭
           DEBUG_PRINTLN("  LED 闪烁已完成");
         }
+        blinkCount++;
       }
     }
 
